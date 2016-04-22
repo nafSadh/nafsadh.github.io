@@ -5,6 +5,7 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet"
 				href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" media="print" href="bootstrap/css/bootstrap.min.css">
 	<!-- Optional theme -->
 	<link rel="stylesheet"
 				href="bootstrap/css/bootstrap-theme.min.css">
@@ -17,6 +18,129 @@
 	<link rel="stylesheet"
 				href="fontawesome/css/font-awesome.min.css">
 	<style>
+		.ns7r.container {
+			width: 816px;
+		}
+
+		@media print {
+			.ns7r.container {
+				width: 612pt;
+				font-family: Georgia, Verdana, Arial, serif;
+			}
+		}
+
+		@media print {
+
+			.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+				float: left !important;
+			}
+
+			.col-md-12 {
+				width: 100%;
+			}
+
+			.col-md-11 {
+				width: 91.66666666666666%;
+			}
+
+			.col-md-10 {
+				width: 83.33333333333334%;
+			}
+
+			.col-md-9 {
+				width: 75%;
+			}
+
+			.col-md-8 {
+				width: 66.66666666666666%;
+			}
+
+			.col-md-7 {
+				width: 58.333333333333336%;
+			}
+
+			.col-md-6 {
+				width: 50%;
+			}
+
+			.col-md-5 {
+				width: 41.66666666666667%;
+			}
+
+			.col-md-4 {
+				width: 33.33333333333333%;
+			}
+
+			.col-md-3 {
+				width: 25%;
+			}
+
+			.col-md-2 {
+				width: 16.666666666666664%;
+			}
+
+			.col-md-1 {
+				width: 8.333333333333332%;
+			}
+
+			.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+				float: left !important;
+			}
+
+			.col-sm-12 {
+				width: 100%;
+			}
+
+			.col-sm-11 {
+				width: 91.66666666666666%;
+			}
+
+			.col-sm-10 {
+				width: 83.33333333333334%;
+			}
+
+			.col-sm-9 {
+				width: 75%;
+			}
+
+			.col-sm-8 {
+				width: 66.66666666666666%;
+			}
+
+			.col-sm-7 {
+				width: 58.333333333333336%;
+			}
+
+			.col-sm-6 {
+				width: 50%;
+			}
+
+			.col-sm-5 {
+				width: 41.66666666666667%;
+			}
+
+			.col-sm-4 {
+				width: 33.33333333333333%;
+			}
+
+			.col-sm-3 {
+				width: 25%;
+			}
+
+			.col-sm-2 {
+				width: 16.666666666666664%;
+			}
+
+			.col-sm-1 {
+				width: 8.333333333333332%;
+			}
+
+		}
+
+		.ns7r {
+			line-height: 1.4em;
+		}
+
 		.ns7r code {
 			color: #66BB6A;
 		}
@@ -36,6 +160,7 @@
 			border: none;
 			border-radius: 0;
 			padding: 0;
+			background: transparent;
 			margin: 0;
 		}
 
@@ -98,10 +223,15 @@
 			background-color: #f8f8ff;
 		}
 
+		.strip {
+			font-size: 93.5%;
+			line-height: 1.2;
+		}
+
 		.strip:hover {
 			background: #fefef9;
-			margin-left: -1.5em;
-			border-left: 1.5em solid #f0f0ff;
+			margin-left: -24px;
+			border-left: 24px solid #f0f0ff;
 		}
 
 		.card-heading:hover .silver,
@@ -109,11 +239,11 @@
 			color: #07C;
 		}
 
-		.info-address{
+		.info-address {
 			padding-left: 8px;
 		}
 
-		.top-info .fa-li{
+		.top-info .fa-li {
 			color: #888;
 		}
 
@@ -126,10 +256,17 @@
 			font-size: 110%;
 		}
 
+		.sidebar h4 {
+			margin-bottom: 0px;
+		}
+
+		.sidebar .panel .list-group-item {
+			margin-bottom: 8px;
+		}
 	</style>
 </head>
 <body>
-<div class="ns7r container" style="width:900px">
+<div class="ns7r container">
 	<div class="row">
 		<div class="left-border col-md-1"></div>
 		<div class="content col-md-7">
@@ -429,6 +566,46 @@
 					<strong class="text-primary">Showcased project</strong>
 					“Smart Home Technology”
 					<em class="text-muted">at BASIS SoftExpo, Dhaka 2008</em>
+				</div>
+			</div>
+			<div class="leadership row">
+				<div class="col-sm-12">
+					<div class="panel">
+						<div class="panel-heading">
+							<h4 class="text-primary">Leadership</h4>
+						</div>
+						<div class="panel-body">
+							<ul class="list-group">
+								<li class="list-group-item">
+									<em>IEEE Student Branch KUET</em><br/>
+									General Secretary,
+									<small> (2008-2009)</small>
+								</li>
+								<li class="list-group-item">
+									<em>Fazlul Haque Hall Committee, KUET</em> -
+									General Secretary
+									<small> (2008-2009)and Asst. Gen. Secretary (2007-2008)</small>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="involvement row">
+				<div class="col-sm-12">
+					<div class="panel">
+						<div class="panel-heading">
+							<h4 class="text-primary">Involvement</h4>
+						</div>
+						<div class="panel-body">
+							<ul class="list-group">
+								<li class="list-group-item">
+									Publisher, <em>lekhalikhi.com</em>
+									<small>Bengali Literary Community</small>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
