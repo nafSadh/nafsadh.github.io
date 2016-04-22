@@ -1,5 +1,6 @@
 <html>
 <head>
+	<meta charset="utf-8"/>
 	<title>Resume: Khan 'Sadh' Mostafa</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet"
@@ -7,49 +8,86 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet"
 				href="bootstrap/css/bootstrap-theme.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="./bootsrap/js/bootsrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+					integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+					crossorigin="anonymous"></script>
 	<!-- font awesome -->
 	<link rel="stylesheet"
 				href="fontawesome/css/font-awesome.min.css">
 	<style>
+		.ns7r code {
+			color: #66BB6A;
+		}
+
+		.ns7r .panel,
 		.ns7r .list-group {
 			box-shadow: unset;
 		}
 
+		.ns7r .panel-heading,
+		.ns7r .panel-body {
+			padding: 0;
+		}
+
+		.ns7r .panel,
 		.ns7r .list-group-item {
 			border: none;
 			border-radius: 0;
 			padding: 0;
+			margin: 0;
 		}
 
-		.list-group.strips {
+		.ns7r .list-group.strips {
+			margin-bottom: 15px;
+			padding-bottom: 1px;
+		}
+
+		.list-group-item.strip {
+			border-bottom: 1px solid #eee;
+		}
+
+		.list-group-item:first-child.strip {
+			border-top: 1px solid #eee;
 		}
 
 		.list-group-item.strip {
 			background-color: transparent;
-			border-bottom: 1px solid #eee;
+			padding-bottom: 3px;
 			margin-top: 3px;
 		}
 
-		.ash {
-			color: #aaa;
+		.dim {
+			color: #eee;
 		}
 
 		.silver {
 			color: #bbc;
 		}
 
+		.silver.fa-2x {
+			color: #eef;
+		}
 
-		.card:hover .card-heading{
+		.ns7r .panel-heading h3 span {
+			display: block;
+		}
+
+		.ns7r .panel-heading h3:hover span {
+			margin: -4px -4px -4px -56px;
+			border: 4px solid #333;
+			border-left: 56px solid #333;
+			background-color: #333;
+			color: #fff;
+		}
+
+		.card:hover .card-heading {
 			color: #037;
 		}
-		.card:hover .silver{
-			color: #777;
-		}
 
-		.card-heading:hover .silver {
-			color: #07C;
+		.card:hover .silver {
+			color: #777;
 		}
 
 		.card:hover {
@@ -60,16 +98,38 @@
 			background-color: #f8f8ff;
 		}
 
-		.strip:hover{
+		.strip:hover {
 			background: #fefef9;
-			margin-left:-1.5em;
+			margin-left: -1.5em;
 			border-left: 1.5em solid #f0f0ff;
+		}
+
+		.card-heading:hover .silver,
+		.strip:hover .silver {
+			color: #07C;
+		}
+
+		.info-address{
+			padding-left: 8px;
+		}
+
+		.top-info .fa-li{
+			color: #888;
+		}
+
+		.skills div,
+		.side-note div {
+			margin: 8px 0;
+		}
+
+		.main-skills code {
+			font-size: 110%;
 		}
 
 	</style>
 </head>
 <body>
-<div class="ns7r container" style="width:816px">
+<div class="ns7r container" style="width:900px">
 	<div class="row">
 		<div class="left-border col-md-1"></div>
 		<div class="content col-md-7">
@@ -81,69 +141,230 @@
 					4+ years in industry
 				</note>
 			</header>
-			<h2>
-				Experience
-			</h2>
-			<ul class="list-group experiences">
-				<li class="list-group-item experience">
-					<div class="card">
-						<div class="card-heading">
-							<i class="fa fa-li fa-2x fa-briefcase silver" aria-hidden="true"></i>
-							<strong class="card-title">Teledata Communications, Inc.,</strong> <em>Islandia, NY</em>
-							<div class="row">
-								<div class="col-sm-8">
-									<span class="text-primary">Software Engineer</span>
+			<div class="panel">
+				<div class="panel-heading">
+					<h3 class="section-heading"><span>Experience</span></h3>
+				</div>
+				<div class="panel-body">
+					<ul class="list-group experiences">
+						<li class="list-group-item experience">
+							<div class="card">
+								<div class="card-heading">
+									<i class="fa fa-li fa-2x fa-briefcase silver" aria-hidden="true"></i>
+									<strong class="card-title">Teledata Communications, Inc.</strong>
+									<i class="fa fa-map-marker dim"></i>&thinsp;<em>Islandia, NY</em>
+									<div class="row">
+										<div class="col-sm-6">
+											<span class="text-primary job-role">Software Engineer</span>
+										</div>
+										<div class="col-sm-6 text-right">
+											<span class="job-period">Feb 2015 - <i
+														class="fa fa-spinner fa-pulse fa-fw"></i></span>
+										</div>
+									</div>
 								</div>
-								<div class="col-sm-4 text-right"><span>Feb 2015~</span></div>
+								<ul class="list-group strips">
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										Developing backend business logic and frontend user interface along with service
+										integrations for new version of TCI&CloseCurlyQuote;s Loan Origination Solution
+										-
+										<em>Decision&nbsp;Lender&nbsp;4x</em><br/>
+										<code>Java 8</code> <code>AngularJS</code> <code>REST</code> <code>SQL</code>
+									</li>
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										Developed and maintained Decisions Lender v3.5 for existing and new clients<br/>
+									</li>
+								</ul>
 							</div>
-						</div>
-						<ul class="list-group strips">
-							<li class="list-group-item strip">
-								<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-								Developing backend business logic and frontend user interface along with service
-								integrations for new version of TCI&CloseCurlyQuote;s Loan Origination Solution -
-								<em>Decision&nbsp;Lender&nbsp;4x</em><br/>
-								Java 8, AngularJS, REST, SQL
-							</li>
-							<li class="list-group-item strip">
-								<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-								Developing backend business logic and frontend user interface along with
-								service integrations for
-								new version of TCI&CloseCurlyQuote;s Loan Origination Solution - <em>Decision
-								Lender 4x</em><br/>
-								Java 8, AngularJS, REST, SQL
-							</li>
-							<li class="list-group-item strip">
-								<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-								Developing backend business logic and frontend user interface along with
-								service integrations for
-								new version of TCI&CloseCurlyQuote;s Loan Origination Solution - <em>Decision
-								Lender 4x</em><br/>
-								Java 8, AngularJS, REST, SQL
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li class="list-group-item experience">
-					<strong>Teledata Communications, Inc.,</strong> <em>Islandia, NY</em>
-					<div class="row">
-						<div class="col-sm-8"><span class="text-primary">Software Engineer</span>
-						</div>
-						<div class="col-sm-4 text-right"><span>Feb 2015~</span></div>
-					</div>
-					<ul class="list-group">
-						<li class="list-group-item strip">
-							Developing backend business logic and frontend user interface along with
-							service integrations for
-							new version of TCI&CloseCurlyQuote;s Loan Origination Solution - <em>Decision
-							Lender 4x</em><br/>
-							Java 8, AngularJS, REST, SQL
+						</li>
+						<li class="list-group-item experience">
+							<div class="card">
+								<div class="card-heading">
+									<i class="fa fa-li fa-2x fa-briefcase silver" aria-hidden="true"></i>
+									<strong class="card-title">Research Foundation for SUNY</strong>
+									<i class="fa fa-map-marker dim"></i>&thinsp;<em>CEWIT, Stony Brook, NY</em>
+									<div class="row">
+										<div class="col-sm-6">
+											<span class="text-primary job-role">Sr. Research Aide</span>
+										</div>
+										<div class="col-sm-6 text-right">
+											<span class="job-period">Summer & Fall of 2014</span>
+										</div>
+									</div>
+								</div>
+								<ul class="list-group strips">
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										Worked for CA Technologies at CEWIT as on campus internship during MS<br/>
+										<code>Google Glass</code> <code>Java</code>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-group-item experience">
+							<div class="card">
+								<div class="card-heading">
+									<i class="fa fa-li fa-2x fa-briefcase silver" aria-hidden="true"></i>
+									<strong class="card-title">Samsung R&D Institute – Bangladesh</strong>
+									<i class="fa fa-map-marker dim"></i>&thinsp;<em>Dhaka, Bangladesh</em>
+									<div class="row">
+										<div class="col-sm-6">
+											<span class="text-primary job-role">Sr. Software Engineer</span>
+										</div>
+										<div class="col-sm-6 text-right">
+											<span class="job-period">Feb - Aug 2013</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<span class="text-primary job-role">Software Engineer</span>
+										</div>
+										<div class="col-sm-6 text-right">
+											<span class="job-period">Jun 2010 - Feb 2013</span>
+										</div>
+									</div>
+								</div>
+								<ul class="list-group strips">
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										Designed a host – target interaction protocol and developed control module with
+										GUI
+										for FPGA and post-silicon SoC (System on Chip) verification platform<br/>
+										<code>C#</code> <code>WPF</code> <code>C</code> <code>Linux</code>
+									</li>
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										Developed modules of a camera SoC verification tool based on μC/OS-II,
+										<code>C</code>
+									</li>
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										As part of DSP software development exploratory project ported μC/OS-II for
+										custom
+										BSP, ported Web-P for Samsung’s Reconfigurable Processor, developed image code
+										<code>C</code>
+									</li>
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										Participated in development of custom system software for feature phones
+										<code>C</code>
+									</li>
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										Developed smart phone apps for now phased out bada platform
+										<code>C++</code>
+									</li>
+								</ul>
+							</div>
 						</li>
 					</ul>
-				</li>
-			</ul>
-		</div>
+				</div>
+			</div>
+			<div class="panel">
+				<div class="panel-heading">
+					<h3 class="section-heading"><span>Education</span></h3>
+				</div>
+				<div class="panel-body">
+					<ul class="list-group educations">
+						<li class="list-group-item education">
+							<div class="card">
+								<div class="card-heading">
+									<i class="fa fa-li fa-2x fa-graduation-cap silver" aria-hidden="true"></i>
+									<strong class="card-title">Stony Brook University</strong>
+									<i class="fa fa-map-marker dim"></i>&thinsp;<em>Stony Brook, NY</em>
+									<div class="row">
+										<div class="col-sm-6">
+											<span class="text-primary job-role">MS Computer Science</span>
+										</div>
+										<div class="col-sm-6 text-right">
+											<span class="job-period">Aug 2013 - Dec 2014</span>
+										</div>
+									</div>
+								</div>
+								<ul class="list-group strips">
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										<em>Key Courses</em>: Database, Data Mining, Computer Graphics, Brain and Memory
+										Modeling,
+										Analysis of Algorithms, Operating Systems, Logic in CS, Artificial Intelligence
+									</li>
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										Designed tool for opinion mining which leverages entity-keyword bi-graph built
+										from
+										analyzing social network feed <code>C#</code>
+									</li>
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										Implemented a procedural watercolor engine to recreate real-time watercolor
+										effects
+										<code>C++</code> <code>OpenGL</code>
+									</li>
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										Added XML parser for BOSS (brain model simulation tool) INIT module to feed
+										brain model
+										parameters as XML input
+										<code>C++</code>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-group-item education">
+							<div class="card">
+								<div class="card-heading">
+									<i class="fa fa-li fa-2x fa-graduation-cap silver" aria-hidden="true"></i>
+									<strong class="card-title">Khulna University of Engineering & Technology</strong>(KUET)
+									<i class="fa fa-map-marker dim"></i>&thinsp;<em>Bangladesh</em>
+									<div class="row">
+										<div class="col-sm-8">
+											<span class="text-primary job-role">B.Sc. (Engineering) Computer Science</span>
+										</div>
+										<div class="col-sm-4 text-right">
+											<span class="job-period">Jan 2006 - Jun 2010</span>
+										</div>
+									</div>
+								</div>
+								<ul class="list-group strips">
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										<em>Thesis</em>: <i class="fa fa-lightbulb-o"></i>
+										RDF by Structured Reference to Semantics – An approach to emerge Semantic Web:
+										Developed a framework (RS2-fx) to convert current html web documents into
+										Semantic Web RDF documents
+										by extracting underlying semantics backed by support of an existing ontology
+										<a href="http://slidesha.re/RS2fx1"><i class="fa fa-external-link"></i></a>
+									</li>
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										Developed an automated traffic jam recognition and alert tool, Traffic Window,
+										aided with
+										image processing<code>C#</code>
+									</li>
+									<li class="list-group-item strip">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										Developed a Smart home technology, which includes a centrally controlled local
+										system of
+										devices and sensors that actuates smartly upon perceptions. The control unit
+										interfaces with
+										local GUI as well as internet and cellular networks
+										<code>Java</code> <code>ASM</code> <code>Microcontroller</code>
+										<a href="#" data-toggle="tooltip" title="Showcased on BASIS SoftExpo 2008"><span
+													class="glyphicon glyphicon glyphicon-certificate"
+													style="color: darkgoldenrod;"
+													title=""></span></a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!--  content ends -->
 		<div class="sidebar col-md-3" style="background:#eee;">
+			<div style="height: 20px;"></div>
 			<div class="top-info">
 				<div class="row info-address">
 					<ul class="fa-ul">
@@ -160,15 +381,64 @@
 									href="mailto:#">khan@nafsadh.com</a>
 						</li>
 						<li>
-							<abbr title="email"><i class="fa-li fa fa-globe"></i></abbr> <a>http://nafSadh.com</a>
+							<abbr title="website"><i class="fa-li fa fa-globe"></i></abbr>
+							<a>http://nafSadh.com</a>
 						</li>
 					</ul>
 				</div>
 			</div>
-			Awarded "Icon of the Month" by Samsung R&D Institute - Bangladesh, May 2011
+			<div style="height: 20px;">
+			</div>
+			<div class="skills row">
+				<div class="col-sm-12">
+					<span class="main-skills">
+						<strong class="text-primary">Languages:</strong>
+						<code>Java</code>, <code>C</code>, <code>C++</code>
+					</span>
+					<br/>
+					<small>
+						<strong class="text-primary">Familiar with:</strong> <code>C#</code>,
+						<code>Python</code>, <code>SQL</code>, <code>JavaScript</code>, <code>Angular JS</code>
+						etc.
+					</small>
+				</div>
+			</div>
+			<div class="side-note row">
+				<div class="col-sm-12">
+					<strong class="text-primary">Talked</strong> on
+					“Research in the Computing Industry”
+					<em class="text-muted">at CSE Festival, KUET (Jun 2012)</em>
+				</div>
+			</div>
+			<div class="side-note row">
+				<div class="col-sm-12">
+					<strong class="text-primary">Awarded</strong>
+					“Icon of the Month”
+					<em class="text-muted">by Samsung R&D Institute – Bangladesh</em>
+				</div>
+			</div>
+			<div class="side-note row">
+				<div class="col-sm-12">
+					<strong class="text-primary">11th place</strong> on
+					at ACM ICPC
+					<em class="text-muted">Dhaka Regional programming contest 2007</em>
+				</div>
+			</div>
+			<div class="side-note row">
+				<div class="col-sm-12">
+					<strong class="text-primary">Showcased project</strong>
+					“Smart Home Technology”
+					<em class="text-muted">at BASIS SoftExpo, Dhaka 2008</em>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="right-border col-md-1"></div>
 </div>
+<script>
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+	})
+</script>
 </body>
 </html>
