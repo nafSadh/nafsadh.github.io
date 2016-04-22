@@ -3,21 +3,15 @@
 	<title>Resume: Khan 'Sadh' Mostafa</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet"
-				href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-				integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-				crossorigin="anonymous">
+				href="bootstrap/css/bootstrap.min.css">
 	<!-- Optional theme -->
 	<link rel="stylesheet"
-				href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
-				integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
-				crossorigin="anonymous">
+				href="bootstrap/css/bootstrap-theme.min.css">
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-					integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-					crossorigin="anonymous"></script>
+	<script src="./bootsrap/js/bootsrap.min.js"></script>
 	<!-- font awesome -->
 	<link rel="stylesheet"
-				href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+				href="fontawesome/css/font-awesome.min.css">
 	<style>
 		.ns7r .list-group {
 			box-shadow: unset;
@@ -28,16 +22,49 @@
 			border-radius: 0;
 			padding: 0;
 		}
-		.list-group.bullets{
+
+		.list-group.strips {
 		}
-		.list-group-item.bullet{
+
+		.list-group-item.strip {
 			background-color: transparent;
 			border-bottom: 1px solid #eee;
 			margin-top: 3px;
 		}
-		.ash{color:#aaa;  }
-		.silver{color:#bbc;  }
-		.experience:hover .silver{color:#07C; }
+
+		.ash {
+			color: #aaa;
+		}
+
+		.silver {
+			color: #bbc;
+		}
+
+
+		.card:hover .card-heading{
+			color: #037;
+		}
+		.card:hover .silver{
+			color: #777;
+		}
+
+		.card-heading:hover .silver {
+			color: #07C;
+		}
+
+		.card:hover {
+			margin: 0 -4px 0 -4em;
+			border-top: none;
+			border-right: 4px solid #f8f8f8;
+			border-left: 4em solid #f8f8f8;
+			background-color: #f8f8ff;
+		}
+
+		.strip:hover{
+			background: #fefef9;
+			margin-left:-1.5em;
+			border-left: 1.5em solid #f0f0ff;
+		}
 
 	</style>
 </head>
@@ -59,39 +86,43 @@
 			</h2>
 			<ul class="list-group experiences">
 				<li class="list-group-item experience">
-					<i class="fa-li fa fa-briefcase silver" aria-hidden="true"></i>
-					<strong>Teledata Communications, Inc.,</strong> <em>Islandia, NY</em>
-					<div class="row">
-						<div class="col-sm-8">
-							<span class="text-primary">Software Engineer</span>
+					<div class="card">
+						<div class="card-heading">
+							<i class="fa fa-li fa-2x fa-briefcase silver" aria-hidden="true"></i>
+							<strong class="card-title">Teledata Communications, Inc.,</strong> <em>Islandia, NY</em>
+							<div class="row">
+								<div class="col-sm-8">
+									<span class="text-primary">Software Engineer</span>
+								</div>
+								<div class="col-sm-4 text-right"><span>Feb 2015~</span></div>
+							</div>
 						</div>
-						<div class="col-sm-4 text-right"><span>Feb 2015~</span></div>
+						<ul class="list-group strips">
+							<li class="list-group-item strip">
+								<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+								Developing backend business logic and frontend user interface along with service
+								integrations for new version of TCI&CloseCurlyQuote;s Loan Origination Solution -
+								<em>Decision&nbsp;Lender&nbsp;4x</em><br/>
+								Java 8, AngularJS, REST, SQL
+							</li>
+							<li class="list-group-item strip">
+								<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+								Developing backend business logic and frontend user interface along with
+								service integrations for
+								new version of TCI&CloseCurlyQuote;s Loan Origination Solution - <em>Decision
+								Lender 4x</em><br/>
+								Java 8, AngularJS, REST, SQL
+							</li>
+							<li class="list-group-item strip">
+								<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+								Developing backend business logic and frontend user interface along with
+								service integrations for
+								new version of TCI&CloseCurlyQuote;s Loan Origination Solution - <em>Decision
+								Lender 4x</em><br/>
+								Java 8, AngularJS, REST, SQL
+							</li>
+						</ul>
 					</div>
-					<ul class="list-group bullets">
-						<li class="list-group-item bullet">
-							<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-							Developing backend business logic and frontend user interface along with service
-							integrations for new version of TCI&CloseCurlyQuote;s Loan Origination Solution -
-							<em>Decision&nbsp;Lender&nbsp;4x</em><br/>
-							Java 8, AngularJS, REST, SQL
-						</li>
-						<li class="list-group-item bullet">
-							<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-							Developing backend business logic and frontend user interface along with
-							service integrations for
-							new version of TCI&CloseCurlyQuote;s Loan Origination Solution - <em>Decision
-							Lender 4x</em><br/>
-							Java 8, AngularJS, REST, SQL
-						</li>
-						<li class="list-group-item bullet">
-							<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-							Developing backend business logic and frontend user interface along with
-							service integrations for
-							new version of TCI&CloseCurlyQuote;s Loan Origination Solution - <em>Decision
-							Lender 4x</em><br/>
-							Java 8, AngularJS, REST, SQL
-						</li>
-					</ul>
 				</li>
 				<li class="list-group-item experience">
 					<strong>Teledata Communications, Inc.,</strong> <em>Islandia, NY</em>
@@ -101,7 +132,7 @@
 						<div class="col-sm-4 text-right"><span>Feb 2015~</span></div>
 					</div>
 					<ul class="list-group">
-						<li class="list-group-item bullet">
+						<li class="list-group-item strip">
 							Developing backend business logic and frontend user interface along with
 							service integrations for
 							new version of TCI&CloseCurlyQuote;s Loan Origination Solution - <em>Decision
