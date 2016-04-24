@@ -18,23 +18,52 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 	<script
 				src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.min.js"></script>
-	<script src="./json2xml.js"></script>
-	<script src="./xml2json.js"></script>
-	<script src="./parseXml.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+	<script src="./ui-bootstrap-tpls-1.3.2.min.js"></script>
 	<!-- font awesome -->
 	<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="bootstrap-print-alike.css">
 	<link rel="stylesheet" href="ns7r.css">
 	<script>
-		var ns7rApp = angular.module('ns7rApp', ['ngSanitize']);
+		function enableBootstrapJsElements() {
+			$('[data-toggle="tooltip"]').tooltip({html: true})
+			$('[data-toggle="popover"]')
+						.popover({html: true, trigger: "hover click focus", placement: 'top'})
+		}
+		var ns7rApp = angular.module('ns7rApp', ['ngSanitize', 'ui.bootstrap']);
+		ns7rApp.directive("ngBindHtmlCompile", function ($compile, $sce) {
+			return {
+				restrict: "A",
+				link: function (scope, element, attrs) {
+					scope.$watch(attrs.ngBindHtmlCompile, function (html) {
+						var el = angular.element("<span>").html(html);
+						element.empty();
+						element.append(el);
+						$compile(element.contents())(scope);
+						enableBootstrapJsElements()
+					})
+				}
+			};
+		});
+		ns7rApp.directive('tooltip', function () {
+			return {
+				restrict: 'A',
+				link: function (scope, element, attrs) {
+					$(element).hover(function () {
+						// on mouseenter
+						$(element).tooltip('show');
+					}, function () {
+						// on mouseleave
+						$(element).tooltip('hide');
+					});
+				}
+			};
+		});
 		ns7rApp.controller('ns7rCtrl', function ($scope, $http) {
-			$http.get('nafSadh-resume.xml')
+			$http.get('nafSadh-resume.json')
 						.then(function (r) {
-							var xml = r.data
-							var dom = parseXml(xml)
-							var json = xml2json(dom,"")
-							var jsonObj = eval(json)
-							$scope._ = jsonObj.resume
+							$scope._ = r.data
+							enableBootstrapJsElements()
 						})
 			$scope.render = function render(text) {
 				if (angular.isArray(text)) {
@@ -80,10 +109,13 @@
 											<span class="text-primary job-role">{{ role.title }}</span>
 										</div>
 										<div class="col-sm-6 text-right">
-											<span class="job-period">
-												{{ role.since }}
-												- <i ng-if="role.current" class="fa fa-spinner fa-pulse fa-fw"></i>
-												{{ role.until}}
+											<span class="job-period" ng-if="role.time.since!=undefined">
+												{{ role.time.since }}
+												- <i ng-if="role.time.current" class="fa fa-spinner fa-pulse fa-fw" uib-tooltip="current"></i>
+												{{ role.time.until}}
+											</span>
+											<span class="job-period" ng-if="role.time.period!=undefined">
+												{{ role.time.period }}
 											</span>
 										</div>
 									</div>
@@ -92,124 +124,9 @@
 									<li class="list-group-item strip" ng-repeat="info in job.info">
 										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
 										<span ng-if="info.type=='responsibility'">
-											<span class="description" ng-bind-html="render(info.description)"></span>
+											<span class="description" ng-bind-html-compile="render(info.description)"></span>
 										</span>
-										<code>Java 8</code> <code>AngularJS</code> <code>REST</code> <code>SQL</code>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="list-group-item experience">
-							<div class="card">
-								<div class="card-heading">
-									<i class="fa fa-li fa-2x fa-briefcase silver" aria-hidden="true"></i>
-									<strong class="card-title">Teledata Communications, Inc.</strong>
-									<i class="fa fa-map-marker dim"></i>&thinsp;<em>Islandia, NY</em>
-									<div class="row">
-										<div class="col-sm-6">
-											<span class="text-primary job-role">Software Engineer</span>
-										</div>
-										<div class="col-sm-6 text-right">
-											<span class="job-period">Feb 2015 - <i
-														class="fa fa-spinner fa-pulse fa-fw"></i></span>
-										</div>
-									</div>
-								</div>
-								<ul class="list-group strips">
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										Developing backend business logic and frontend user interface along with service
-										integrations for new version of TCI&CloseCurlyQuote;s Loan Origination Solution
-										-
-										<em>Decision&nbsp;Lender&nbsp;4x</em><br/>
-										<code>Java 8</code> <code>AngularJS</code> <code>REST</code> <code>SQL</code>
-									</li>
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										Developed and maintained Decisions Lender v3.5 for existing and new clients<br/>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="list-group-item experience">
-							<div class="card">
-								<div class="card-heading">
-									<i class="fa fa-li fa-2x fa-briefcase silver" aria-hidden="true"></i>
-									<strong class="card-title">Research Foundation for SUNY</strong>
-									<i class="fa fa-map-marker dim"></i>&thinsp;<em>CEWIT, Stony Brook, NY</em>
-									<div class="row">
-										<div class="col-sm-6">
-											<span class="text-primary job-role">Sr. Research Aide</span>
-										</div>
-										<div class="col-sm-6 text-right">
-											<span class="job-period">Summer & Fall of 2014</span>
-										</div>
-									</div>
-								</div>
-								<ul class="list-group strips">
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										Worked for CA Technologies at
-										<abbr title="Center of Excellence in Wireless and Information Technology"
-													data-toggle="tooltip">CEWIT</abbr>
-										as on campus
-										internship during MS<br/>
-										<code>Google Glass</code> <code>Java</code>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="list-group-item experience">
-							<div class="card">
-								<div class="card-heading">
-									<i class="fa fa-li fa-2x fa-briefcase silver" aria-hidden="true"></i>
-									<strong class="card-title">Samsung R&D Institute – Bangladesh</strong>
-									<i class="fa fa-map-marker dim"></i>&thinsp;<em>Dhaka, Bangladesh</em>
-									<div class="row">
-										<div class="col-sm-6">
-											<span class="text-primary job-role">Sr. Software Engineer</span>
-										</div>
-										<div class="col-sm-6 text-right">
-											<span class="job-period">Feb - Aug 2013</span>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<span class="text-primary job-role">Software Engineer</span>
-										</div>
-										<div class="col-sm-6 text-right">
-											<span class="job-period">Jun 2010 - Feb 2013</span>
-										</div>
-									</div>
-								</div>
-								<ul class="list-group strips">
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										Designed a host – target interaction protocol and developed control module with
-										GUI for FPGA and post-silicon SoC (System on Chip) verification platform<br/>
-										<code>C#</code> <code>WPF</code> <code>C</code> <code>Linux</code>
-									</li>
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										Developed modules of a camera SoC verification tool based on μC/OS-II,
-										<code>C</code>
-									</li>
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										As part of DSP software development exploratory project ported μC/OS-II for
-										custom
-										BSP, ported Web-P for Samsung’s Reconfigurable Processor, developed image code
-										<code>C</code>
-									</li>
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										Participated in development of custom system software for feature phones
-										<code>C</code>
-									</li>
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										Developed smart phone apps for now phased out bada platform
-										<code>C++</code>
+										<code ng-repeat="key in info.tech">{{ key }}</code>
 									</li>
 								</ul>
 							</div>
@@ -457,9 +374,7 @@
 </div>
 <script>
 	$(function () {
-		$('[data-toggle="tooltip"]').tooltip({html: true})
-		$('[data-toggle="popover"]').popover(
-					{html: true, trigger: "hover click focus", placement: 'top'})
+		enableBootstrapJsElements()
 	})
 </script>
 </body>

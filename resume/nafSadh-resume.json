@@ -7,12 +7,73 @@
 			"company": "Teledata Communications, Inc.",
 			"location": "Islandia, NY",
 			"roles": [
-				{"title": "Software Engineer", "since": "Feb 2015", "until": "", "current": true}
+				{
+					"title": "Software Engineer",
+					"time": {"since": "Feb 2015", "until": "", "current": true}
+				}
 			],
 			"info": [
 				{
 					"type": "responsibility",
-					"description": "Developing backend business logic and frontend user interface along with service integrations for new version of TCI&CloseCurlyQuote;s Loan Origination Solution - <em>Decision&nbsp;Lender&nbsp;4x</em>"
+					"description": "Developing backend business logic and frontend user interface along with service integrations for new version of TCI&CloseCurlyQuote;s Loan Origination Solution - <em>Decision&nbsp;Lender&nbsp;4x</em>",
+					"tech": ["Java 8", "Angular JS", "REST", "SQL"]
+				}, {
+					"type": "responsibility",
+					"description": "Developed and maintained <em>Decisions Lender v3.5</em> for existing and new clients"
+				}
+			]
+		},
+		{
+			"company": "Research Foundation for SUNY",
+			"location": "CEWIT, Stony Brook, NY",
+			"roles": [
+				{
+					"title": "Sr. Research Aide",
+					"time": {"period": "Summer & Fall of 2014"}
+				}
+			],
+			"info": [
+				{
+					"type": "responsibility",
+					"description": "Worked for CA Technologies at <abbr data-toggle='tooltip' title='Center of Excellence in Wireless and Information Technology'>CEWIT</abbr> as on campus internship during MS<br/>",
+					"tech": ["Google Glass", "Java 8"]
+				}
+			]
+		},
+		{
+			"company": "Samsung R&D Institute – Bangladesh",
+			"location": "Dhaka, Bangladesh",
+			"roles": [
+				{
+					"title": "Sr. Software Engineer",
+					"time": {"since": "Feb", "until": "Aug 2013"}
+				},
+				{
+					"title": "Software Engineer",
+					"time": {"since": "Jun 2010", "until": "Feb 2013"}
+				}
+			],
+			"info": [
+				{
+					"type": "responsibility",
+					"description": "Designed a host – target interaction protocol and developed control module with GUI for FPGA and post-silicon SoC (System on Chip) verification platform<br/>",
+					"tech": ["C#", "WPF", "C", "Linux"]
+				}, {
+					"type": "responsibility",
+					"description": "Developed modules of a camera SoC verification tool based on μC/OS-II",
+					"tech": ["C"]
+				}, {
+					"type": "responsibility",
+					"description": "As part of DSP project ported μC/OS-II for custom BSP, ported Web-P for Samsung’s Reconfigurable Processor, developed image code",
+					"tech": ["C", "C++"]
+				}, {
+					"type": "responsibility",
+					"description": "Participated in development of custom system software for feature phones",
+					"tech": ["C"]
+				}, {
+					"type": "responsibility",
+					"description": "Developed smart phone apps for Samsung's <span uib-tooltip='bada was Samsung&CloseCurlyQuote;s in-house Smart-phone platform; it is the predecessor to Tizen project'>bada</span> platform",
+					"tech": ["C++"]
 				}
 			]
 		}
