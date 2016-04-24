@@ -1,4 +1,4 @@
-<html>
+<html ng-app="ns7rApp">
 <head>
 	<meta charset="utf-8"/>
 	<title>Resume: Khan 'Sadh' Mostafa</title>
@@ -14,6 +14,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
 					integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
 					crossorigin="anonymous"></script>
+	<!-- angular js -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 	<!-- font awesome -->
 	<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="bootstrap-print-alike.css">
@@ -193,15 +195,32 @@
 			margin-bottom: 8px;
 		}
 
+		.popover img {
+			float: left;
+			margin-right: 8px;
+		}
+
+		.popover {
+			width: 600px;
+		}
 	</style>
+	<script>
+		var ns7rApp = angular.module('ns7rApp', []);
+		ns7rApp.controller('ns7rCtrl', function ($scope, $http) {
+			$http.get('ns7Resume.json')
+						.then(function (r) {
+							$scope._ = r.data
+						})
+		})
+	</script>
 </head>
 <body>
-<div class="ns7r container">
+<div ng-controller="ns7rCtrl" class="ns7r container">
 	<div class="row">
 		<div class="left-border col-md-1"></div>
 		<div class="content col-md-7">
 			<header>
-				<h1>Khan 'Sadh' Mostafa</h1>
+				<h1>{{ _.name }}</h1>
 				<note>
 					Software Engineer at Teledata Communication, Inc.<br/>
 					MS in CS from Stony Brook / B.Sc. (Engineering) from KUET<br/>
@@ -387,7 +406,15 @@
 							<div class="card">
 								<div class="card-heading">
 									<i class="fa fa-li fa-2x fa-graduation-cap silver" aria-hidden="true"></i>
-									<strong class="card-title">Khulna University of Engineering & Technology</strong>(KUET)
+									<strong class="card-title"
+													title="<b>Khulna University of Engineering & Technology</b>"
+													data-toggle="popover"
+													data-content="<img src='http://nafsadh.com/img/kuet.png ' width='32px' />
+													KUET, a public university in Bangladesh, emphasizes on engineering and technology.
+													It has a comprehensive Computer Science and Engineering program.
+													">
+										Khulna University of Engineering & Technology
+									</strong>(KUET)
 									<i class="fa fa-map-marker dim"></i>&thinsp;<em>Bangladesh</em>
 									<div class="row">
 										<div class="col-sm-8">
@@ -563,6 +590,8 @@
 <script>
 	$(function () {
 		$('[data-toggle="tooltip"]').tooltip({html: true})
+		$('[data-toggle="popover"]').popover(
+					{html: true, trigger: "hover click focus", placement: 'top'})
 	})
 </script>
 </body>
