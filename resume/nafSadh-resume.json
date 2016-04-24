@@ -1,0 +1,20 @@
+{
+	"name": "Khan 'Sadh' Mostafa",
+	"highlights": [
+	],
+	"experience": [
+		{
+			"company": "Teledata Communications, Inc.",
+			"location": "Islandia, NY",
+			"roles": [
+				{"title": "Software Engineer", "since": "Feb 2015", "until": "", "current": true}
+			],
+			"info": [
+				{
+					"type": "responsibility",
+					"description": "Developing backend business logic and frontend user interface along with service integrations for new version of TCI&CloseCurlyQuote;s Loan Origination Solution - <em>Decision&nbsp;Lender&nbsp;4x</em>"
+				}
+			]
+		}
+	]
+}

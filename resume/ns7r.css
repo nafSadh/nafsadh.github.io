@@ -1,0 +1,193 @@
+.ns7r.container {
+    padding-top: 2.5em;
+}
+
+@media screen {
+    body {
+        background: whitesmoke;
+    }
+
+    .ns7r.container {
+        background: #fffffc;
+        width: 930px;
+        font-size: 14px;
+        border: 1px solid #eee;
+        /*padding-left: 3em;*/
+        padding-bottom: 2.5em;
+        margin-bottom: 8px;
+        margin-top: 8px;
+        box-shadow: 0 3px 3px 1px #eee;
+    }
+}
+
+@media print {
+    .ns7r.container {
+        width: 930px;
+    }
+
+    .print-link i.fa {
+        display: none;
+    }
+
+    a[href].print-link::after {
+        display: inline !important;
+        content: " (" attr(href) ")";
+    }
+}
+
+@media all {
+    .ns7r code {
+        color: #66BB6A;
+    }
+}
+
+.ns7r {
+    line-height: 1.4em;
+}
+
+.ns7r abbr[title] {
+    border-bottom-color: #ccc;
+}
+
+.ns7r .panel,
+.ns7r .list-group {
+    box-shadow: unset;
+}
+
+.ns7r .panel-heading,
+.ns7r .panel-body {
+    padding: 0;
+}
+
+.ns7r .panel,
+.ns7r .list-group-item {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    margin: 0;
+}
+
+.ns7r .highlights span {
+    display: block;
+}
+
+.ns7r .sidebar .list-group {
+    margin: 0;
+}
+
+.ns7r .list-group.strips {
+    margin-bottom: 15px;
+    padding-bottom: 1px;
+}
+
+.list-group-item.strip {
+    border-bottom: 1px solid #eee;
+}
+
+.list-group-item:first-child.strip {
+    border-top: 1px solid #eee;
+}
+
+.list-group-item.strip {
+    background-color: transparent;
+    padding-bottom: 3px;
+    margin-top: 3px;
+}
+
+.dim {
+    color: #eee;
+}
+
+.silver {
+    color: #bbc;
+}
+
+.silver.fa-2x {
+    color: #eef;
+}
+
+.ns7r .panel-heading h3 span {
+    display: block;
+}
+
+.ns7r .panel-heading h3:hover span {
+    margin: -4px -4px -4px -56px;
+    border: 4px solid #333;
+    border-left: 56px solid #333;
+    background-color: #333;
+    color: #fff;
+}
+
+.card:hover .card-heading {
+    color: #037;
+}
+
+.card:hover .silver {
+    color: #777;
+}
+
+.card:hover {
+    margin: 0 -4px 0 -4em;
+    border-top: none;
+    border-right: 4px solid #f8f8f8;
+    border-left: 4em solid #f8f8f8;
+    background-color: #f8f8ff;
+}
+
+.strip {
+    font-size: 93.5%;
+    line-height: 1.2;
+}
+
+.strip:hover {
+    background: #ffc;
+    margin-left: -24px;
+    border-left: 24px solid #f0f0ff;
+}
+
+.card-heading:hover .silver,
+.strip:hover .silver {
+    color: #07C;
+}
+
+.info-address {
+    padding-left: 8px;
+}
+
+.top-info .fa-li {
+    color: #888;
+}
+
+.skills div,
+.side-note div {
+    margin: 8px 0;
+}
+
+.main-skills code {
+    font-size: 110%;
+}
+
+.sidebar {
+    background: #eee;
+    border-top: 4px solid #ccc;
+}
+
+.sidebar h4 {
+    margin-bottom: 0px;
+    font-size: 105%;
+    font-weight: 700;
+}
+
+.sidebar .panel .list-group-item {
+    margin-bottom: 8px;
+}
+
+.popover img {
+    float: left;
+    margin-right: 8px;
+}
+
+.popover {
+    width: 600px;
+}

@@ -16,201 +16,37 @@
 					crossorigin="anonymous"></script>
 	<!-- angular js -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script
+				src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.min.js"></script>
+	<script src="./json2xml.js"></script>
+	<script src="./xml2json.js"></script>
+	<script src="./parseXml.js"></script>
 	<!-- font awesome -->
 	<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="bootstrap-print-alike.css">
-	<style>
-
-		.ns7r.container {
-			padding-top: 2.5em;
-		}
-
-		@media screen {
-			body{
-				background: whitesmoke;
-			}
-			.ns7r.container {
-				background: #fffffc;
-				width: 930px;
-				font-size: 14px;
-				border: 1px solid #eee;
-				padding-bottom: 2.5em;
-				margin-bottom: 8px;
-				margin-top: 8px;
-				box-shadow: 0 3px 3px 1px #eee;
-			}
-		}
-
-		@media print {
-			.ns7r.container {
-				width: 930px;
-			}
-
-			.print-link i.fa {
-				display: none;
-			}
-
-			a[href].print-link::after {
-				display: inline !important;
-				content: " (" attr(href) ")";
-			}
-		}
-
-		@media all {
-			.ns7r code {
-				color: #66BB6A;
-			}
-		}
-
-		.ns7r {
-			line-height: 1.4em;
-		}
-
-		.ns7r abbr[title] {
-			border-bottom-color: #ccc;
-		}
-
-		.ns7r .panel,
-		.ns7r .list-group {
-			box-shadow: unset;
-		}
-
-		.ns7r .panel-heading,
-		.ns7r .panel-body {
-			padding: 0;
-		}
-
-		.ns7r .panel,
-		.ns7r .list-group-item {
-			border: none;
-			border-radius: 0;
-			padding: 0;
-			background: transparent;
-			margin: 0;
-		}
-
-		.ns7r .sidebar .list-group {
-			margin: 0;
-		}
-
-		.ns7r .list-group.strips {
-			margin-bottom: 15px;
-			padding-bottom: 1px;
-		}
-
-		.list-group-item.strip {
-			border-bottom: 1px solid #eee;
-		}
-
-		.list-group-item:first-child.strip {
-			border-top: 1px solid #eee;
-		}
-
-		.list-group-item.strip {
-			background-color: transparent;
-			padding-bottom: 3px;
-			margin-top: 3px;
-		}
-
-		.dim {
-			color: #eee;
-		}
-
-		.silver {
-			color: #bbc;
-		}
-
-		.silver.fa-2x {
-			color: #eef;
-		}
-
-		.ns7r .panel-heading h3 span {
-			display: block;
-		}
-
-		.ns7r .panel-heading h3:hover span {
-			margin: -4px -4px -4px -56px;
-			border: 4px solid #333;
-			border-left: 56px solid #333;
-			background-color: #333;
-			color: #fff;
-		}
-
-		.card:hover .card-heading {
-			color: #037;
-		}
-
-		.card:hover .silver {
-			color: #777;
-		}
-
-		.card:hover {
-			margin: 0 -4px 0 -4em;
-			border-top: none;
-			border-right: 4px solid #f8f8f8;
-			border-left: 4em solid #f8f8f8;
-			background-color: #f8f8ff;
-		}
-
-		.strip {
-			font-size: 93.5%;
-			line-height: 1.2;
-		}
-
-		.strip:hover {
-			background: #ffc;
-			margin-left: -24px;
-			border-left: 24px solid #f0f0ff;
-		}
-
-		.card-heading:hover .silver,
-		.strip:hover .silver {
-			color: #07C;
-		}
-
-		.info-address {
-			padding-left: 8px;
-		}
-
-		.top-info .fa-li {
-			color: #888;
-		}
-
-		.skills div,
-		.side-note div {
-			margin: 8px 0;
-		}
-
-		.main-skills code {
-			font-size: 110%;
-		}
-
-		.sidebar h4 {
-			margin-bottom: 0px;
-			font-size: 105%;
-			font-weight: 700;
-		}
-
-		.sidebar .panel .list-group-item {
-			margin-bottom: 8px;
-		}
-
-		.popover img {
-			float: left;
-			margin-right: 8px;
-		}
-
-		.popover {
-			width: 600px;
-		}
-	</style>
+	<link rel="stylesheet" href="ns7r.css">
 	<script>
-		var ns7rApp = angular.module('ns7rApp', []);
+		var ns7rApp = angular.module('ns7rApp', ['ngSanitize']);
 		ns7rApp.controller('ns7rCtrl', function ($scope, $http) {
-			$http.get('ns7Resume.json')
+			$http.get('nafSadh-resume.xml')
 						.then(function (r) {
-							$scope._ = r.data
+							var xml = r.data
+							var dom = parseXml(xml)
+							var json = xml2json(dom,"")
+							var jsonObj = eval(json)
+							$scope._ = jsonObj.resume
 						})
+			$scope.render = function render(text) {
+				if (angular.isArray(text)) {
+					var t = ''
+					for (var i = 0; i < text.length; i++) {
+						t += text[i]
+					}
+					return t
+				} else {
+					return text
+				}
+			}
 		})
 	</script>
 </head>
@@ -221,11 +57,11 @@
 		<div class="content col-md-7">
 			<header>
 				<h1>{{ _.name }}</h1>
-				<note>
-					Software Engineer at Teledata Communication, Inc.<br/>
-					MS in CS from Stony Brook / B.Sc. (Engineering) from KUET<br/>
-					4+ years in industry
-				</note>
+				<div class="highlights">
+					<span>Software Engineer at Teledata Communication, Inc.</span>
+					<span>MS in CS from Stony Brook / B.Sc. (Engineering) from KUET</span>
+					<span>4+ years in industry</span>
+				</div>
 			</header>
 			<div class="panel">
 				<div class="panel-heading">
@@ -233,6 +69,36 @@
 				</div>
 				<div class="panel-body">
 					<ul class="list-group experiences">
+						<li class="list-group-item experience" ng-repeat="job in _.experience">
+							<div class="card">
+								<div class="card-heading">
+									<i class="fa fa-li fa-2x fa-briefcase silver" aria-hidden="true"></i>
+									<strong class="card-title">{{job.company}}</strong>
+									<i class="fa fa-map-marker dim"></i>&thinsp;<em>{{ job.location }}</em>
+									<div class="row" ng-repeat="role in job.roles">
+										<div class="col-sm-6">
+											<span class="text-primary job-role">{{ role.title }}</span>
+										</div>
+										<div class="col-sm-6 text-right">
+											<span class="job-period">
+												{{ role.since }}
+												- <i ng-if="role.current" class="fa fa-spinner fa-pulse fa-fw"></i>
+												{{ role.until}}
+											</span>
+										</div>
+									</div>
+								</div>
+								<ul class="list-group strips">
+									<li class="list-group-item strip" ng-repeat="info in job.info">
+										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
+										<span ng-if="info.type=='responsibility'">
+											<span class="description" ng-bind-html="render(info.description)"></span>
+										</span>
+										<code>Java 8</code> <code>AngularJS</code> <code>REST</code> <code>SQL</code>
+									</li>
+								</ul>
+							</div>
+						</li>
 						<li class="list-group-item experience">
 							<div class="card">
 								<div class="card-heading">
@@ -320,8 +186,7 @@
 									<li class="list-group-item strip">
 										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
 										Designed a host – target interaction protocol and developed control module with
-										GUI
-										for FPGA and post-silicon SoC (System on Chip) verification platform<br/>
+										GUI for FPGA and post-silicon SoC (System on Chip) verification platform<br/>
 										<code>C#</code> <code>WPF</code> <code>C</code> <code>Linux</code>
 									</li>
 									<li class="list-group-item strip">
@@ -462,7 +327,7 @@
 				</div>
 			</div>
 		</div><!--  content ends -->
-		<div class="sidebar col-md-3" style="background:#eee;">
+		<div class="sidebar col-md-3">
 			<div style="height: 20px;"></div>
 			<div class="top-info">
 				<div class="row info-address">
@@ -586,6 +451,9 @@
 		</div>
 	</div>
 	<div class="right-border col-md-1"></div>
+	<div class="row">
+		{{ xml }}
+	</div>
 </div>
 <script>
 	$(function () {
