@@ -47,20 +47,7 @@
 				}
 			};
 		});
-		ns7rApp.directive('tooltip', function () {
-			return {
-				restrict: 'A',
-				link: function (scope, element, attrs) {
-					$(element).hover(function () {
-						// on mouseenter
-						$(element).tooltip('show');
-					}, function () {
-						// on mouseleave
-						$(element).tooltip('hide');
-					});
-				}
-			};
-		});
+
 		ns7rApp.controller('ns7rCtrl', function ($scope, $http) {
 			$http.get('nafSadh-resume.json')
 						.then(function (r) {
