@@ -87,9 +87,7 @@
 			<header>
 				<h1>{{ _.name }}</h1>
 				<div class="highlights">
-					<span>Software Engineer at Teledata Communication, Inc.</span>
-					<span>MS in CS from Stony Brook / B.Sc. (Engineering) from KUET</span>
-					<span>4+ years in industry</span>
+					<span ng-repeat="highlight in _.highlights" ng-bind-html-compile="highlight"></span>
 				</div>
 			</header>
 			<div class="panel">
