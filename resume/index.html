@@ -5,10 +5,7 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet"
 				href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" media="print" href="bootstrap/css/bootstrap.min.css">
 	<!-- Optional theme -->
-	<link rel="stylesheet"
-				href="bootstrap/css/bootstrap-theme.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
@@ -25,10 +22,15 @@
 	<link rel="stylesheet" href="bootstrap-print-alike.css">
 	<link rel="stylesheet" href="ns7r.css">
 	<script>
-		function enableBootstrapJsElements() {
+		function applyBootstrapJS() {
 			$('[data-toggle="tooltip"]').tooltip({html: true})
 			$('[data-toggle="popover"]')
 						.popover({html: true, trigger: "hover click focus", placement: 'top'})
+
+			$('.pull-down').each(function () {
+				var $this = $(this);
+				$this.css('margin-top', $this.parent().height() - $this.height())
+			});
 		}
 		var ns7rApp = angular.module('ns7rApp', ['ngSanitize', 'ui.bootstrap']);
 		ns7rApp.directive("ngBindHtmlCompile", function ($compile, $sce) {
@@ -40,7 +42,7 @@
 						element.empty();
 						element.append(el);
 						$compile(element.contents())(scope);
-						enableBootstrapJsElements()
+						applyBootstrapJS()
 					})
 				}
 			};
@@ -63,7 +65,7 @@
 			$http.get('nafSadh-resume.json')
 						.then(function (r) {
 							$scope._ = r.data
-							enableBootstrapJsElements()
+							applyBootstrapJS()
 						})
 			$scope.mlt = function mlt(text) {
 				if (angular.isArray(text)) {
@@ -118,7 +120,7 @@
 											<span class="job-period" ng-if="role.time.since!=undefined">
 												{{ role.time.since }}
 												- <i ng-if="role.time.current" class="fa fa-spinner fa-pulse fa-fw"
-														 uib-tooltip="current"></i>
+														 uib-tooltip="current" print-alt="now"></i>
 												{{ role.time.until}}
 											</span>
 											<span class="job-period" ng-if="role.time.period!=undefined">
@@ -319,6 +321,19 @@
 					</div>
 				</div>
 			</div>
+			<footer>
+				<div ng-repeat="link in _.links" class="link">
+					<i ng-if="link.fa!=undefined" class="fa {{ link.fa }}"></i>
+					<span>{{ link.for }}</span>:
+					<span class="url" ng-repeat="url in link.url"><a href="{{ url }}">{{ url }}</a></span>
+				</div>
+				<div class="stamp">
+					Updated on {{ _.dateUpdated }}, available online:
+					<a href="{{ _.hosted }}">{{ _.hosted }}</a>
+					<br/>
+					Contact for further information
+				</div>
+			</footer>
 		</div>
 	</div>
 	<div class="right-border col-md-1"></div>
@@ -328,7 +343,7 @@
 </div>
 <script>
 	$(function () {
-		enableBootstrapJsElements()
+		applyBootstrapJS()
 	})
 </script>
 </body>
