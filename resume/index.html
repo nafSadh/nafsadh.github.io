@@ -187,67 +187,11 @@
 											<span ng-repeat="course in info.courses" ng-bind-html-compile="course"
 														class="comma-sep-list"></span>
 										</span>
+										<span ng-if="info.type=='thesis'">
+											<em>Thesis</em>: <i class="fa fa-lightbulb-o"></i>
+										</span>
 										<span class="description" ng-bind-html-compile="mlt(info.description)"></span>
 										<code ng-repeat="key in info.tech">{{ key }}</code>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="panel-body">
-					<ul class="list-group educations">
-						<li class="list-group-item education">
-							<div class="card">
-								<div class="card-heading">
-									<i class="fa fa-li fa-2x fa-graduation-cap silver" aria-hidden="true"></i>
-									<strong class="card-title"
-													title="<b>Khulna University of Engineering & Technology</b>"
-													data-toggle="popover"
-													data-content="<img src='http://nafsadh.com/img/kuet.png ' width='32px' />
-													KUET, a public university in Bangladesh, emphasizes on engineering and technology.
-													It has a comprehensive Computer Science and Engineering program.
-													">d
-									</strong>(KUET)
-									<i class="fa fa-map-marker dim"></i>&thinsp;<em>Bangladesh</em>
-									<div class="row">
-										<div class="col-sm-8">
-											<span class="text-primary job-role">B.Sc. (Engineering) Computer Science</span>
-										</div>
-										<div class="col-sm-4 text-right">
-											<span class="job-period">Jan 2006 - Jun 2010</span>
-										</div>
-									</div>
-								</div>
-								<ul class="list-group strips">
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										<em>Thesis</em>: <i class="fa fa-lightbulb-o"></i>
-										RDF by Structured Reference to Semantics – An approach to emerge Semantic Web:
-										Developed a framework (RS2-fx) to convert current html web documents into
-										Semantic Web RDF documents
-										by extracting underlying semantics backed by support of an existing ontology
-										<a href="http://slidesha.re/RS2fx1" class="print-link"><i
-													class="fa fa-external-link"></i></a>
-									</li>
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										Developed an automated traffic jam recognition and alert tool, Traffic Window,
-										aided with
-										image processing<code>C#</code>
-									</li>
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										Developed a Smart home technology, which includes a centrally controlled local
-										system of
-										devices and sensors that actuates smartly upon perceptions. The control unit
-										interfaces with
-										local GUI as well as internet and cellular networks
-										<code>Java</code> <code>ASM</code> <code>Microcontroller</code>
-										<a href="#" data-toggle="tooltip" title="Showcased on BASIS SoftExpo 2008"><span
-													class="glyphicon glyphicon glyphicon-certificate"
-													style="color: darkgoldenrod;"
-													title=""></span></a>
 									</li>
 								</ul>
 							</div>

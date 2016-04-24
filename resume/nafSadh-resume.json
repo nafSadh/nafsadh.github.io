@@ -5,7 +5,7 @@
 	"experience": [
 		{
 			"company": "Teledata Communications, Inc.",
-			"about":"TCI builds and provides SaaS for financial institutions. It's primary product is <em>Decision Lender</em> - a &ldquo;Loan Origination Solution&rdquo; for Credit Unions and banks.",
+			"about": "TCI builds and provides SaaS for financial institutions. It's primary product is <em>Decision Lender</em> - a &ldquo;Loan Origination Solution&rdquo; for Credit Unions and banks.",
 			"location": "Islandia, NY",
 			"roles": [
 				{
@@ -118,36 +118,37 @@
 		{
 			"institution": "Khulna University of Engineering & Technology",
 			"about": " <img src='http://nafsadh.com/img/kuet.png ' width='32px' /> KUET, a public university in Bangladesh, emphasizes on engineering and technology. It has a comprehensive Computer Science and Engineering program.",
-			"location": "Stony Brook, NY",
+			"location": "Bangladesh",
 			"degree": [
 				{
-					"title": "MS Computer Science",
-					"time": {"since": "Aug 2013", "until": "Dec 2014"}
+					"title": "B.Sc. (Engineering) Computer Science",
+					"time": {"since": "Jan 2006", "until": "Jun 2010"}
 				}
 			],
 			"info": [
 				{
-					"type": "key-courses",
-					"courses": [
-						"Database", "Data Mining", "Computer Graphics", "Brain and Memory Modeling",
-						"Analysis of Algorithms", "Operating Systems", "Logic in CS",
-						"Artificial Intelligence"
+					"type": "thesis",
+					"description": [
+						"&ldquo;RDF by Structured Reference to Semantics",
+						" – An approach to emerge Semantic Web&rdquo;: ",
+						"Developed a framework (RS2-fx) to convert current html web documents into ",
+						"Semantic Web RDF documents ",
+						"by extracting underlying semantics backed by support of an existing ontology ",
+						"<a href='http://slidesha.re/RS2fx1'class='print-link'> ",
+						"<i class='fa fa-external-link'></i></a> "
 					]
 				},
 				{
-					"type": "course-project",
-					"description": "Designed tool for opinion mining which leverages entity-keyword bi-graph built from analyzing social network feed",
+					"type": "project",
+					"description": "Developed an automated traffic jam recognition and alert tool, Traffic Window, aided with image processing",
 					"tech": ["C#"]
 				},
 				{
-					"type": "course-project",
-					"description": "Implemented a procedural watercolor engine to recreate real-time watercolor effects",
-					"tech": ["C++", "OpenGL"]
-				},
-				{
-					"type": "course-project",
-					"description": "Added XML parser for BOSS (brain model simulation tool) INIT module to feed brain model parameters as XML input",
-					"tech": ["C++"]
+					"type": "project",
+					"description": ["Developed a Smart home technology, which includes a centrally controlled local system of devices and sensors that actuates smartly upon perceptions. The control unit interfaces with local GUI as well as internet and cellular networks ",
+						"<a data-toggle='tooltip' title='Showcased on BASIS SoftExpo 2008'><span class='glyphicon glyphicon glyphicon-certificate' style='color: darkgoldenrod;' title=''></span></a>"
+					],
+					"tech": ["Java", "ASM", "Microcontroller"]
 				}
 			]
 		}
