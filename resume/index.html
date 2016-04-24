@@ -65,7 +65,7 @@
 							$scope._ = r.data
 							enableBootstrapJsElements()
 						})
-			$scope.render = function render(text) {
+			$scope.mlt = function mlt(text) {
 				if (angular.isArray(text)) {
 					var t = ''
 					for (var i = 0; i < text.length; i++) {
@@ -102,8 +102,16 @@
 							<div class="card">
 								<div class="card-heading">
 									<i class="fa fa-li fa-2x fa-briefcase silver" aria-hidden="true"></i>
-									<strong class="card-title">{{job.company}}</strong>
-									<i class="fa fa-map-marker dim"></i>&thinsp;<em>{{ job.location }}</em>
+									<script type="text/ng-template" id="jobTitlePopover.html">
+										<span ng-bind-html="job.about"></span>
+									</script>
+									<strong class="card-title"
+													popover-enable="job.about!=undefined"
+													popover-trigger="mouseenter click outsideClick"
+													popover-title="{{ job.company}}"
+													uib-popover-template="'jobTitlePopover.html'">
+										{{job.company}}
+									</strong> <i class="fa fa-map-marker dim"></i>&thinsp;<em>{{ job.location }}</em>
 									<div class="row" ng-repeat="role in job.roles">
 										<div class="col-sm-6">
 											<span class="text-primary job-role">{{ role.title }}</span>
@@ -111,7 +119,8 @@
 										<div class="col-sm-6 text-right">
 											<span class="job-period" ng-if="role.time.since!=undefined">
 												{{ role.time.since }}
-												- <i ng-if="role.time.current" class="fa fa-spinner fa-pulse fa-fw" uib-tooltip="current"></i>
+												- <i ng-if="role.time.current" class="fa fa-spinner fa-pulse fa-fw"
+														 uib-tooltip="current"></i>
 												{{ role.time.until}}
 											</span>
 											<span class="job-period" ng-if="role.time.period!=undefined">
@@ -123,9 +132,7 @@
 								<ul class="list-group strips">
 									<li class="list-group-item strip" ng-repeat="info in job.info">
 										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										<span ng-if="info.type=='responsibility'">
-											<span class="description" ng-bind-html-compile="render(info.description)"></span>
-										</span>
+										<span class="description" ng-bind-html-compile="mlt(info.description)"></span>
 										<code ng-repeat="key in info.tech">{{ key }}</code>
 									</li>
 								</ul>
@@ -140,50 +147,56 @@
 				</div>
 				<div class="panel-body">
 					<ul class="list-group educations">
-						<li class="list-group-item education">
+						<li class="list-group-item education" ng-repeat="ed in _.education">
 							<div class="card">
 								<div class="card-heading">
-									<i class="fa fa-li fa-2x fa-graduation-cap silver" aria-hidden="true"></i>
-									<strong class="card-title">Stony Brook University</strong>
-									<i class="fa fa-map-marker dim"></i>&thinsp;<em>Stony Brook, NY</em>
-									<div class="row">
+									<i class="fa fa-li fa-2x fa-briefcase silver" aria-hidden="true"></i>
+									<script type="text/ng-template" id="edTitlePopover.html">
+										<span ng-bind-html="ed.about"></span>
+									</script>
+									<strong class="card-title"
+													popover-enable="ed.about!=undefined"
+													popover-trigger="mouseenter click focus outsideClick"
+													popover-title="{{ ed.institution }}"
+													uib-popover-template="'edTitlePopover.html'">
+										{{ed.institution}}
+									</strong>
+									<i class="fa fa-map-marker dim"></i>&thinsp;<em>{{ ed.location }}</em>
+									<div class="row" ng-repeat="degree in ed.degree">
 										<div class="col-sm-6">
-											<span class="text-primary job-role">MS Computer Science</span>
+											<span class="text-primary degree">{{ degree.title }}</span>
 										</div>
 										<div class="col-sm-6 text-right">
-											<span class="job-period">Aug 2013 - Dec 2014</span>
+											<span class="degree-period" ng-if="degree.time.since!=undefined">
+												{{ degree.time.since }}
+												- <i ng-if="degree.time.current" class="fa fa-spinner fa-pulse fa-fw"
+														 uib-tooltip="current"></i>
+												{{ degree.time.until}}
+											</span>
+											<span class="degree-period" ng-if="degree.time.period!=undefined">
+												{{ degree.time.period }}
+											</span>
 										</div>
 									</div>
 								</div>
 								<ul class="list-group strips">
-									<li class="list-group-item strip">
+									<li class="list-group-item strip" ng-repeat="info in ed.info">
 										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										<em>Key Courses</em>: <i class="fa fa-lightbulb-o"></i>
-										Database, Data Mining, Computer Graphics, Brain and Memory Modeling,
-										Analysis of Algorithms, Operating Systems, Logic in CS, Artificial Intelligence
-									</li>
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										Designed tool for opinion mining which leverages entity-keyword bi-graph built
-										from
-										analyzing social network feed <code>C#</code>
-									</li>
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										Implemented a procedural watercolor engine to recreate real-time watercolor
-										effects
-										<code>C++</code> <code>OpenGL</code>
-									</li>
-									<li class="list-group-item strip">
-										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										Added XML parser for BOSS (brain model simulation tool) INIT module to feed
-										brain model
-										parameters as XML input
-										<code>C++</code>
+										<span ng-if="info.type=='key-courses'">
+											<em>Key Courses</em>: <i class="fa fa-book"></i>
+											<span ng-repeat="course in info.courses" ng-bind-html-compile="course"
+														class="comma-sep-list"></span>
+										</span>
+										<span class="description" ng-bind-html-compile="mlt(info.description)"></span>
+										<code ng-repeat="key in info.tech">{{ key }}</code>
 									</li>
 								</ul>
 							</div>
 						</li>
+					</ul>
+				</div>
+				<div class="panel-body">
+					<ul class="list-group educations">
 						<li class="list-group-item education">
 							<div class="card">
 								<div class="card-heading">
@@ -194,8 +207,7 @@
 													data-content="<img src='http://nafsadh.com/img/kuet.png ' width='32px' />
 													KUET, a public university in Bangladesh, emphasizes on engineering and technology.
 													It has a comprehensive Computer Science and Engineering program.
-													">
-										Khulna University of Engineering & Technology
+													">d
 									</strong>(KUET)
 									<i class="fa fa-map-marker dim"></i>&thinsp;<em>Bangladesh</em>
 									<div class="row">

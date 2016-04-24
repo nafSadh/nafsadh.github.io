@@ -5,6 +5,7 @@
 	"experience": [
 		{
 			"company": "Teledata Communications, Inc.",
+			"about":"TCI builds and provides SaaS for financial institutions. It's primary product is <em>Decision Lender</em> - a &ldquo;Loan Origination Solution&rdquo; for Credit Unions and banks.",
 			"location": "Islandia, NY",
 			"roles": [
 				{
@@ -72,7 +73,80 @@
 					"tech": ["C"]
 				}, {
 					"type": "responsibility",
-					"description": "Developed smart phone apps for Samsung's <span uib-tooltip='bada was Samsung&CloseCurlyQuote;s in-house Smart-phone platform; it is the predecessor to Tizen project'>bada</span> platform",
+					"description": "Developed smart phone apps for Samsung’s <span uib-tooltip='bada was Samsung’s in-house Smart-phone platform; it is the predecessor to Tizen project'>bada</span> platform",
+					"tech": ["C++"]
+				}
+			]
+		}
+	],
+	"education": [
+		{
+			"institution": "Stony Brook University",
+			"location": "Stony Brook, NY",
+			"degree": [
+				{
+					"title": "MS Computer Science",
+					"time": {"since": "Aug 2013", "until": "Dec 2014"}
+				}
+			],
+			"info": [
+				{
+					"type": "key-courses",
+					"courses": [
+						"Database", "Data Mining", "Computer Graphics", "Brain and Memory Modeling",
+						"Analysis of Algorithms", "Operating Systems", "Logic in CS",
+						"Artificial Intelligence"
+					]
+				},
+				{
+					"type": "course-project",
+					"description": "Designed tool for opinion mining which leverages entity-keyword bi-graph built from analyzing social network feed",
+					"tech": ["C#"]
+				},
+				{
+					"type": "course-project",
+					"description": "Implemented a procedural watercolor engine to recreate real-time watercolor effects",
+					"tech": ["C++", "OpenGL"]
+				},
+				{
+					"type": "course-project",
+					"description": "Added XML parser for BOSS (brain model simulation tool) INIT module to feed brain model parameters as XML input",
+					"tech": ["C++"]
+				}
+			]
+		},
+		{
+			"institution": "Khulna University of Engineering & Technology",
+			"about": " <img src='http://nafsadh.com/img/kuet.png ' width='32px' /> KUET, a public university in Bangladesh, emphasizes on engineering and technology. It has a comprehensive Computer Science and Engineering program.",
+			"location": "Stony Brook, NY",
+			"degree": [
+				{
+					"title": "MS Computer Science",
+					"time": {"since": "Aug 2013", "until": "Dec 2014"}
+				}
+			],
+			"info": [
+				{
+					"type": "key-courses",
+					"courses": [
+						"Database", "Data Mining", "Computer Graphics", "Brain and Memory Modeling",
+						"Analysis of Algorithms", "Operating Systems", "Logic in CS",
+						"Artificial Intelligence"
+					]
+				},
+				{
+					"type": "course-project",
+					"description": "Designed tool for opinion mining which leverages entity-keyword bi-graph built from analyzing social network feed",
+					"tech": ["C#"]
+				},
+				{
+					"type": "course-project",
+					"description": "Implemented a procedural watercolor engine to recreate real-time watercolor effects",
+					"tech": ["C++", "OpenGL"]
+				},
+				{
+					"type": "course-project",
+					"description": "Added XML parser for BOSS (brain model simulation tool) INIT module to feed brain model parameters as XML input",
 					"tech": ["C++"]
 				}
 			]

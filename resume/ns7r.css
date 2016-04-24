@@ -45,6 +45,17 @@
     }
 }
 
+.comma-sep-list::after{
+    content: ', ';
+}
+.comma-sep-list:last-child::after{
+    content: '';
+}
+
+.ns7r .popover-title{
+    font-weight: 700;
+}
+
 .ns7r {
     line-height: 1.4em;
 }
