@@ -15,134 +15,42 @@
 					integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
 					crossorigin="anonymous"></script>
 	<!-- font awesome -->
-	<link rel="stylesheet"
-				href="fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="bootstrap-print-alike.css">
 	<style>
 		.ns7r.container {
-			width: 816px;
+			width: 930px;
+			font-size: 14px;
 		}
 
 		@media print {
 			.ns7r.container {
-				width: 612pt;
-				font-family: Georgia, Verdana, Arial, serif;
+				width: 930px;
+			}
+
+			.print-link i.fa {
+				display: none;
+			}
+
+			a[href].print-link::after {
+				display: inline !important;
+				content: " (" attr(href) ")";
 			}
 		}
 
-		@media print {
-
-			.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
-				float: left !important;
+		@media all {
+			.ns7r code {
+				color: #66BB6A;
 			}
-
-			.col-md-12 {
-				width: 100%;
-			}
-
-			.col-md-11 {
-				width: 91.66666666666666%;
-			}
-
-			.col-md-10 {
-				width: 83.33333333333334%;
-			}
-
-			.col-md-9 {
-				width: 75%;
-			}
-
-			.col-md-8 {
-				width: 66.66666666666666%;
-			}
-
-			.col-md-7 {
-				width: 58.333333333333336%;
-			}
-
-			.col-md-6 {
-				width: 50%;
-			}
-
-			.col-md-5 {
-				width: 41.66666666666667%;
-			}
-
-			.col-md-4 {
-				width: 33.33333333333333%;
-			}
-
-			.col-md-3 {
-				width: 25%;
-			}
-
-			.col-md-2 {
-				width: 16.666666666666664%;
-			}
-
-			.col-md-1 {
-				width: 8.333333333333332%;
-			}
-
-			.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
-				float: left !important;
-			}
-
-			.col-sm-12 {
-				width: 100%;
-			}
-
-			.col-sm-11 {
-				width: 91.66666666666666%;
-			}
-
-			.col-sm-10 {
-				width: 83.33333333333334%;
-			}
-
-			.col-sm-9 {
-				width: 75%;
-			}
-
-			.col-sm-8 {
-				width: 66.66666666666666%;
-			}
-
-			.col-sm-7 {
-				width: 58.333333333333336%;
-			}
-
-			.col-sm-6 {
-				width: 50%;
-			}
-
-			.col-sm-5 {
-				width: 41.66666666666667%;
-			}
-
-			.col-sm-4 {
-				width: 33.33333333333333%;
-			}
-
-			.col-sm-3 {
-				width: 25%;
-			}
-
-			.col-sm-2 {
-				width: 16.666666666666664%;
-			}
-
-			.col-sm-1 {
-				width: 8.333333333333332%;
-			}
-
 		}
 
 		.ns7r {
 			line-height: 1.4em;
+			font-size: 10pt;
 		}
 
-		.ns7r code {
-			color: #66BB6A;
+		.ns7r abbr[title] {
+			border-bottom-color: #ccc;
 		}
 
 		.ns7r .panel,
@@ -258,11 +166,14 @@
 
 		.sidebar h4 {
 			margin-bottom: 0px;
+			font-size: 105%;
+			font-weight: 700;
 		}
 
 		.sidebar .panel .list-group-item {
 			margin-bottom: 8px;
 		}
+
 	</style>
 </head>
 <body>
@@ -273,8 +184,8 @@
 			<header>
 				<h1>Khan 'Sadh' Mostafa</h1>
 				<note>
-					Softwere Engineer at Teledata Communication, Inc.<br/>
-					MS in CS from Stony Brook / B.Sc. (Engineering) friom KUET<br/>
+					Software Engineer at Teledata Communication, Inc.<br/>
+					MS in CS from Stony Brook / B.Sc. (Engineering) from KUET<br/>
 					4+ years in industry
 				</note>
 			</header>
@@ -334,7 +245,11 @@
 								<ul class="list-group strips">
 									<li class="list-group-item strip">
 										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										Worked for CA Technologies at CEWIT as on campus internship during MS<br/>
+										Worked for CA Technologies at
+										<abbr title="Center of Excellence in Wireless and Information Technology"
+													data-toggle="tooltip">CEWIT</abbr>
+										as on campus
+										internship during MS<br/>
 										<code>Google Glass</code> <code>Java</code>
 									</li>
 								</ul>
@@ -423,8 +338,8 @@
 								<ul class="list-group strips">
 									<li class="list-group-item strip">
 										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
-										<em>Key Courses</em>: Database, Data Mining, Computer Graphics, Brain and Memory
-										Modeling,
+										<em>Key Courses</em>: <i class="fa fa-lightbulb-o"></i>
+										Database, Data Mining, Computer Graphics, Brain and Memory Modeling,
 										Analysis of Algorithms, Operating Systems, Logic in CS, Artificial Intelligence
 									</li>
 									<li class="list-group-item strip">
@@ -472,7 +387,8 @@
 										Developed a framework (RS2-fx) to convert current html web documents into
 										Semantic Web RDF documents
 										by extracting underlying semantics backed by support of an existing ontology
-										<a href="http://slidesha.re/RS2fx1"><i class="fa fa-external-link"></i></a>
+										<a href="http://slidesha.re/RS2fx1" class="print-link"><i
+													class="fa fa-external-link"></i></a>
 									</li>
 									<li class="list-group-item strip">
 										<i class="fa-li fa fa-angle-right silver" aria-hidden="true"></i>
@@ -515,11 +431,11 @@
 						</li>
 						<li>
 							<abbr title="email"><i class="fa-li fa fa-envelope-o"></i></abbr> <a
-									href="mailto:#">khan@nafsadh.com</a>
+									href="mailto:khan@nafsadh.com">khan@nafsadh.com</a>
 						</li>
 						<li>
 							<abbr title="website"><i class="fa-li fa fa-globe"></i></abbr>
-							<a>http://nafSadh.com</a>
+							<a href="http://nafSadh.com">http://nafSadh.com</a>
 						</li>
 					</ul>
 				</div>
@@ -614,7 +530,7 @@
 </div>
 <script>
 	$(function () {
-		$('[data-toggle="tooltip"]').tooltip()
+		$('[data-toggle="tooltip"]').tooltip({html: true})
 	})
 </script>
 </body>
