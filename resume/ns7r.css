@@ -3,11 +3,6 @@
 }
 
 @media screen {
-    .ns7r code {
-        margin-top: 2px;
-        display: inline-flex;
-    }
-
     .ns7r span[uib-tooltip],
     .ns7r abbr[title] {
         border-bottom: 1px dotted #ccc;
@@ -153,7 +148,7 @@
 }
 
 .ns7r h3.section-heading {
-    margin-top: 10px;
+    margin-top: 1px;
 }
 
 .ns7r .panel-heading h3 span {
@@ -182,16 +177,7 @@
     font-size: 110%;
 }
 
-.sidebar {
-    background: #eee;
-    border-top: 4px solid #ccc;
-}
 
-.sidebar h4 {
-    margin-bottom: 0px;
-    font-size: 105%;
-    font-weight: 700;
-}
 
 .sidebar .panel .list-group-item {
     margin-bottom: 8px;
@@ -218,14 +204,4 @@
     content: none;
 }
 
-.ns7r footer {
-    margin: 60px -8px 4px -8px;
-    font-size: 90%;
-    background-color: #ddd;
-    border: 8px solid #ddd;
-}
 
-.ns7r .stamp {
-    margin-top: 1em;
-    border-top: 1px solid #ccc;
-}

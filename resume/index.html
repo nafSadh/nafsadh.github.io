@@ -83,16 +83,6 @@
 								 + _a.postCode;
 				}
 			}
-
-			$scope.withPop = function (text, popTitle, popText) {
-				return '<span data-container="body" data-toggle="popover" ' +
-							 'data-placement="top"  data-html="true" ' +
-							 'title="' + popTitle + '"' +
-							 'data-content="' + popText + '">' +
-							 		text +
-							 '</span>'
-
-			}
 		})
 	</script>
 </head>
@@ -121,7 +111,13 @@
 										<span ng-bind-html="job.about"></span>
 									</script>
 									<strong class="card-title"
-													ng-bind-html-compile="withPop(job.company, job.company, job.about)">
+													popover-enable="job.about!=undefined"
+													popover-popup-close-delay="500"
+													popover-placement="top-left"
+													popover-trigger="click mouseenter"
+													popover-title="{{ job.company }}"
+													uib-popover-template="'jobTitlePopover.html'">
+										{{job.company}}
 									</strong>
 									<a href="{{ job.mapUrl }}" target="_blank"><i
 												class="fa fa-map-marker dim"></i></a>&thinsp;<em>{{job.location }}</em>
