@@ -3,7 +3,6 @@
 }
 
 @media screen {
-
     .ns7r code {
         margin-top: 2px;
         display: inline-flex;
@@ -17,8 +16,9 @@
 
 @media screen and (min-width: 1000px) {
     body {
-        background: whitesmoke;
+        background: #444;
     }
+
     .ns7r.container {
         background: #fffffc;
         width: 930px;
@@ -28,7 +28,7 @@
         padding-bottom: 2.5em;
         margin-bottom: 8px;
         margin-top: 8px;
-        box-shadow: 0 3px 3px 1px #eee;
+        box-shadow: 0 3px 3px 1px #222;
     }
 }
 
@@ -53,12 +53,14 @@
 
     .fa[print-alt] {
         animation: none;
-        font: inherit!important;
+        font: inherit !important;
     }
-    .fa[print-alt]:before{
+
+    .fa[print-alt]:before {
         display: none !important;
     }
-    .fa[print-alt]:after{
+
+    .fa[print-alt]:after {
         display: inline-flex;
         content: attr(print-alt);
     }
@@ -75,7 +77,6 @@
         margin-right: 0;
     }
 }
-
 
 .comma-sep-list::after {
     content: ', ';
@@ -151,48 +152,17 @@
     color: #eef;
 }
 
+.ns7r h3.section-heading {
+    margin-top: 10px;
+}
+
 .ns7r .panel-heading h3 span {
     display: block;
-}
-
-.ns7r .panel-heading h3:hover span {
-    margin: -4px -4px -4px -56px;
-    border: 4px solid #333;
-    border-left: 56px solid #333;
-    background-color: #333;
-    color: #fff;
-}
-
-.card:hover .card-heading {
-    color: #037;
-}
-
-.card:hover .silver {
-    color: #777;
-}
-
-.card:hover {
-    margin: 0 -4px 0 -4em;
-    border-top: none;
-    border-right: 4px solid #f8f8f8;
-    border-left: 4em solid #f8f8f8;
-    background-color: #f8f8ff;
 }
 
 .strip {
     font-size: 93.5%;
     line-height: 1.2;
-}
-
-.strip:hover {
-    background: #ffc;
-    margin-left: -24px;
-    border-left: 24px solid #f0f0ff;
-}
-
-.card-heading:hover .silver,
-.strip:hover .silver {
-    color: #07C;
 }
 
 .info-address {
@@ -236,26 +206,26 @@
     width: 600px;
 }
 
-.ns7r .link a{
+.ns7r .link a {
     font-size: 95%;
 }
 
 .ns7r .link .url::after {
-    content:' & '
+    content: ' & '
 }
 
 .ns7r .link .url:last-child::after {
     content: none;
 }
 
-.ns7r footer{
+.ns7r footer {
     margin: 60px -8px 4px -8px;
     font-size: 90%;
     background-color: #ddd;
     border: 8px solid #ddd;
 }
 
-.ns7r .stamp{
+.ns7r .stamp {
     margin-top: 1em;
     border-top: 1px solid #ccc;
 }

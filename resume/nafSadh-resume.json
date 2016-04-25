@@ -5,10 +5,25 @@
 		"MS in CS from Stony Brook / B.Sc. (Engineering) from KUET",
 		"4+ years in industry"
 	],
+	"address":{
+		"street":"190 Mineola Blvd 5L",
+		"city":"Mineola",
+		"state":"NY",
+		"stateFull":"New York",
+		"postCode":"11501"
+	},
+	"phone":"+1 (631) 703-8451",
+	"telUrl":"tel:+16317038451",
+	"email":"khan@nafSadh.com",
+	"website":"http://nafSadh.com",
+	"skills":{
+		"programming":["Java", "C", "C++"],
+		"other":["C#", "Python", "SQL", "JavaScript", "Angular JS"]
+	},
 	"experience": [
 		{
 			"company": "Teledata Communications, Inc.",
-			"about": "TCI builds and provides SaaS for financial institutions. It's primary product is <em>Decision Lender</em> - a &ldquo;Loan Origination Solution&rdquo; for Credit Unions and banks.",
+			"about": "<img src='http://nafsadh.com/img/tci.png' width='32px'/>TCI builds and provides SaaS for financial institutions. It's primary product is <em>Decision Lender</em> - a &ldquo;Loan Origination Solution&rdquo; for Credit Unions and banks.",
 			"location": "Islandia, NY",
 			"roles": [
 				{
@@ -120,7 +135,7 @@
 		},
 		{
 			"institution": "Khulna University of Engineering & Technology",
-			"about": " <img src='http://nafsadh.com/img/kuet.png ' width='32px' /> KUET, a public university in Bangladesh, emphasizes on engineering and technology. It has a comprehensive Computer Science and Engineering program.",
+			"about": "<img src='http://nafsadh.com/img/kuet.png ' width='32px' /> KUET, a public university in Bangladesh, emphasizes on engineering and technology. It has a comprehensive Computer Science and Engineering program.",
 			"location": "Bangladesh",
 			"degree": [
 				{

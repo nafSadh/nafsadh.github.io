@@ -20,6 +20,7 @@
 	<!-- font awesome -->
 	<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="bootstrap-print-alike.css">
+	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="ns7r.css">
 	<script>
 		function applyBootstrapJS() {
@@ -49,11 +50,13 @@
 		});
 
 		ns7rApp.controller('ns7rCtrl', function ($scope, $http) {
+
 			$http.get('nafSadh-resume.json')
 						.then(function (r) {
 							$scope._ = r.data
 							applyBootstrapJS()
 						})
+
 			$scope.mlt = function mlt(text) {
 				if (angular.isArray(text)) {
 					var t = ''
@@ -64,6 +67,19 @@
 				} else {
 					return text
 				}
+			}
+
+			$scope.renderAddress = function (_a) {
+				var stateTagOpen, stateTagClose;
+				if (_a.stateFull != undefined) {
+					stateTagOpen = "<abbr data-toggle='tooltip' title='" + _a.stateFull + "'>"
+					stateTagClose = "</abbr>"
+				}
+				return _a.street + "<br/>" +
+							 _a.city + ", " +
+							 stateTagOpen + _a.state + stateTagClose
+							 + " "
+							 + _a.postCode;
 			}
 		})
 	</script>
@@ -194,19 +210,19 @@
 					<ul class="fa-ul">
 						<li>
 							<i class="fa-li fa fa-map-marker" aria-hidden="true"></i>
-							<address>190 Mineola Blvd 5L<br>Mineola, NY 11501</address>
+							<address ng-bind-html-compile="renderAddress(_.address)"></address>
 						</li>
 						<li>
-							<abbr title="Phone"><i class="fa-li fa fa-phone"></i></abbr> +1 (631)
-							703-8451
+							<abbr title="Phone"><i class="fa-li fa fa-phone"></i></abbr>
+							<a href="{{ _.telUrl }}">{{ _.phone }}</a>
 						</li>
 						<li>
-							<abbr title="email"><i class="fa-li fa fa-envelope-o"></i></abbr> <a
-									href="mailto:khan@nafsadh.com">khan@nafsadh.com</a>
+							<abbr title="email"><i class="fa-li fa fa-envelope-o"></i></abbr>
+							<a href="mailto:{{ _.email }}">{{ _.email }}</a>
 						</li>
 						<li>
 							<abbr title="website"><i class="fa-li fa fa-globe"></i></abbr>
-							<a href="http://nafSadh.com">http://nafSadh.com</a>
+							<a href="{{_.website}}">{{ _.website }}</a>
 						</li>
 					</ul>
 				</div>
@@ -217,12 +233,14 @@
 				<div class="col-sm-12">
 					<span class="main-skills">
 						<strong class="text-primary">Languages:</strong>
-						<code>Java</code>, <code>C</code>, <code>C++</code>
+						<span ng-repeat="lang in _.skills.programming"
+									class="comma-sep-list"><code>{{ lang }}</code></span>
 					</span>
 					<br/>
 					<small>
-						<strong class="text-primary">Familiar with:</strong> <code>C#</code>,
-						<code>Python</code>, <code>SQL</code>, <code>JavaScript</code>, <code>Angular JS</code>
+						<strong class="text-primary">Familiar with:</strong>
+						<span ng-repeat="fw in _.skills.other"
+									class="comma-sep-list"><code>{{ fw }}</code></span>
 						etc.
 					</small>
 				</div>
